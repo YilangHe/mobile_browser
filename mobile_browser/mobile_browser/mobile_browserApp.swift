@@ -2,7 +2,7 @@
 //  mobile_browserApp.swift
 //  mobile_browser
 //
-//  Created by 何逸朗 on 8/4/22.
+//  Created by Charles on 8/4/22.
 //
 
 import SwiftUI
