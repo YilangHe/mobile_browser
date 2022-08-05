@@ -15,6 +15,7 @@
 		205880EF289C7557005BD879 /* WebViewVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205880EE289C7557005BD879 /* WebViewVM.swift */; };
 		205880F2289C92EA005BD879 /* ColorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205880F1289C92EA005BD879 /* ColorExt.swift */; };
 		205880F5289CCA4D005BD879 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205880F4289CCA4C005BD879 /* SearchBarView.swift */; };
+		205880F7289D0031005BD879 /* WebSite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205880F6289D0031005BD879 /* WebSite.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		205880EE289C7557005BD879 /* WebViewVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewVM.swift; sourceTree = "<group>"; };
 		205880F1289C92EA005BD879 /* ColorExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExt.swift; sourceTree = "<group>"; };
 		205880F4289CCA4C005BD879 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		205880F6289D0031005BD879 /* WebSite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSite.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				205880E2289B9E61005BD879 /* Assets.xcassets */,
 				205880E4289B9E61005BD879 /* Preview Content */,
 				205880F4289CCA4C005BD879 /* SearchBarView.swift */,
+				205880F6289D0031005BD879 /* WebSite.swift */,
 			);
 			path = mobile_browser;
 			sourceTree = "<group>";
@@ -158,6 +161,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				205880ED289C7310005BD879 /* WebView.swift in Sources */,
+				205880F7289D0031005BD879 /* WebSite.swift in Sources */,
 				205880F2289C92EA005BD879 /* ColorExt.swift in Sources */,
 				205880E1289B9E5E005BD879 /* ContentView.swift in Sources */,
 				205880EF289C7557005BD879 /* WebViewVM.swift in Sources */,

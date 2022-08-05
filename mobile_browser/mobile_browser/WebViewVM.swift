@@ -12,6 +12,7 @@ class WebViewVM: ObservableObject {
     let webView: WKWebView
     // Set defalut url as Google.com
     let url: URL = URL(string: "https://www.google.com")!
+    let googleRecSearch: String = "http://suggestqueries.google.com/complete/search?&q="
     
     @Published var canGoBack: Bool = false
     @Published var canGoForward: Bool = false
