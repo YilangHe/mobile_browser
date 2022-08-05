@@ -44,38 +44,64 @@ struct ContentView: View {
     }
 }
 
+
+
+
+
+// Components
+
 @ViewBuilder
 func ToolBarBtnGroup(webViewVM: WebViewVM) -> some View {
-    Button {
-        webViewVM.goBack()
-    } label: {
-        Image(systemName: "arrow.backward")
-            .foregroundColor(webViewVM.canGoBack ? Color.white : Color.gray)
+    Spacer()
+    Group {
+        Button {
+            webViewVM.goBack()
+        } label: {
+            Image(systemName: "arrow.backward")
+                .foregroundColor(webViewVM.canGoBack ? Color.white : Color.gray)
+        }
+        .disabled(!webViewVM.canGoBack)
+        .padding(.horizontal, 10)
+        
+        Button {
+            webViewVM.goForward()
+        } label: {
+            Image(systemName: "arrow.forward")
+                .foregroundColor(webViewVM.canGoForward ? Color.white : Color.gray)
+        }
+        .disabled(!webViewVM.canGoForward)
+        .padding(.horizontal, 10)
     }
-    .disabled(!webViewVM.canGoBack)
-    .padding(.horizontal, 10)
     
-    Button {
-        webViewVM.goForward()
-    } label: {
-        Image(systemName: "arrow.forward")
-            .foregroundColor(webViewVM.canGoForward ? Color.white : Color.gray)
-    }
-    .disabled(!webViewVM.canGoForward)
-    .padding(.horizontal, 10)
-    
+    Spacer()
     Button {
         
     } label: {
         NavigationLink {
-            EmptyView()
+            TabsView()
         } label: {
             Image(systemName: "square.3.stack.3d")
                 .foregroundColor(Color.white)
         }
     }
     .padding(.horizontal, 10)
+    Spacer()
+    Button {
+        
+    } label: {
+        NavigationLink {
+            TabsView()
+        } label: {
+            Image(systemName: "clock.arrow.circlepath")
+                .foregroundColor(Color.white)
+        }
+    }
+    .padding(.horizontal, 10)
+    Spacer()
 }
+
+
+//Preview
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
