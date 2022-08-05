@@ -49,9 +49,15 @@ struct ContentView: View {
                 WebView(webView: webViewVM.webView, url: webViewVM.url)
             }
         }
-        
+        .environmentObject(webViewVM)
     }
 }
+
+// Components
+
+
+
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
