@@ -30,7 +30,7 @@ struct SearchBarView: View {
                 webViewVM.loadURL()
             } label: {
                 Text("GO")
-                    .foregroundColor(.gray)
+                    .foregroundColor(.white)
                     .padding(.vertical, 8)
                     .padding(.horizontal, 15)
             }
@@ -38,6 +38,7 @@ struct SearchBarView: View {
             .cornerRadius(15)
             .padding(.trailing, 17)
             .padding(.vertical, 8)
+            .disabled(webViewVM.urlString.isEmpty)
         }
     }
 }
