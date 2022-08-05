@@ -22,6 +22,8 @@ class WebViewVM: ObservableObject {
         webView = WKWebView(frame: .zero)
         
         webView.load(URLRequest(url: url))
+        
+        setUpBindings()
     }
     
     func loadURL() {
@@ -36,6 +38,10 @@ class WebViewVM: ObservableObject {
         webView
             .publisher(for: \.canGoBack)
             .assign(to: &$canGoBack)
+        
+        webView
+            .publisher(for: \.canGoForward)
+            .assign(to: &$canGoForward)
     }
     
     func goForward() {

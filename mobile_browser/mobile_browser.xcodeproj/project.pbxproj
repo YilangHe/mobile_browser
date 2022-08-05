@@ -13,6 +13,7 @@
 		205880E6289B9E61005BD879 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 205880E5289B9E61005BD879 /* Preview Assets.xcassets */; };
 		205880ED289C7310005BD879 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205880EC289C730F005BD879 /* WebView.swift */; };
 		205880EF289C7557005BD879 /* WebViewVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205880EE289C7557005BD879 /* WebViewVM.swift */; };
+		205880F2289C92EA005BD879 /* ColorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205880F1289C92EA005BD879 /* ColorExt.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		205880E5289B9E61005BD879 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		205880EC289C730F005BD879 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		205880EE289C7557005BD879 /* WebViewVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewVM.swift; sourceTree = "<group>"; };
+		205880F1289C92EA005BD879 /* ColorExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExt.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 		205880DD289B9E5E005BD879 /* mobile_browser */ = {
 			isa = PBXGroup;
 			children = (
+				205880F0289C92D4005BD879 /* Extensions */,
 				205880DE289B9E5E005BD879 /* mobile_browserApp.swift */,
 				205880EC289C730F005BD879 /* WebView.swift */,
 				205880EE289C7557005BD879 /* WebViewVM.swift */,
@@ -71,6 +74,14 @@
 				205880E5289B9E61005BD879 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		205880F0289C92D4005BD879 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				205880F1289C92EA005BD879 /* ColorExt.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,6 +155,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				205880ED289C7310005BD879 /* WebView.swift in Sources */,
+				205880F2289C92EA005BD879 /* ColorExt.swift in Sources */,
 				205880E1289B9E5E005BD879 /* ContentView.swift in Sources */,
 				205880EF289C7557005BD879 /* WebViewVM.swift in Sources */,
 				205880DF289B9E5E005BD879 /* mobile_browserApp.swift in Sources */,
