@@ -21,24 +21,26 @@ struct ContentView: View {
                 Color
                     .defaultPalette.dark
                     .ignoresSafeArea()
-                
-                VStack(spacing: 0) {
-                    SearchBarView()
-                    
-                    WebView(webView: webViewVM.webView, url: webViewVM.url)
+
+                    VStack(spacing: 0) {
+                        SearchBarView()
+                        
+                        WebView(webView: webViewVM.webView, url: webViewVM.url)
+                        
+                        Spacer()
+                    }
+            }
+            .toolbar {
+                ToolbarItemGroup(placement: .bottomBar) {
+                    ToolBarBtnGroup(webViewVM: webViewVM)
                     
                     Spacer()
                 }
             }
+            .environmentObject(webViewVM)
+            .navigationTitle("")
+            .navigationBarHidden(true)
         }
-        .toolbar {
-            ToolbarItemGroup(placement: .bottomBar) {
-                ToolBarBtnGroup(webViewVM: webViewVM)
-                
-                Spacer()
-            }
-        }
-        .environmentObject(webViewVM)
     }
 }
 
@@ -65,8 +67,12 @@ func ToolBarBtnGroup(webViewVM: WebViewVM) -> some View {
     Button {
         
     } label: {
-        Image(systemName: "square.3.stack.3d")
-            .foregroundColor(Color.white)
+        NavigationLink {
+            EmptyView()
+        } label: {
+            Image(systemName: "square.3.stack.3d")
+                .foregroundColor(Color.white)
+        }
     }
     .padding(.horizontal, 10)
 }
