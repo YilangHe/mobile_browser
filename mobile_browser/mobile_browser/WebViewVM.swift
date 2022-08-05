@@ -21,7 +21,7 @@ class WebViewVM: ObservableObject {
     init() {
         webView = WKWebView(frame: .zero)
         
-        webView.load(URLRequest(url: url))
+//        webView.load(URLRequest(url: url))
         
         setUpBindings()
     }

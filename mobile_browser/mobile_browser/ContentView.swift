@@ -24,7 +24,7 @@ struct ContentView: View {
                                   text: $webViewVM.urlString)
                         .keyboardType(.URL)
                         .autocapitalization(.none)
-                        .foregroundColor(.white)
+                        .foregroundColor(Color.defaultPalette.light)
                         .padding(.vertical, 8)
                         .padding(.horizontal, 15)
                     }
