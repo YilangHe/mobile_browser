@@ -10,5 +10,6 @@ import SwiftUI
 
 struct WebSite: Identifiable, Codable, Hashable {
     var id = UUID()
+    var isSaved: Bool = false
     let urlString: String
 }

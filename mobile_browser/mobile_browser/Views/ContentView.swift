@@ -74,6 +74,23 @@ func ToolBarBtnGroup(webViewVM: WebViewVM) -> some View {
     }
     
     Spacer()
+    
+    Button {
+        if !webViewVM.isSaved() && webViewVM.verifyUrl() {
+            webViewVM.savedTabs.append(WebSite(urlString: webViewVM.urlString))
+        } else {
+            webViewVM.removeFromSaved()
+        }
+        
+    } label: {
+        Image(systemName: webViewVM.isSaved() ? "star.fill" : "star")
+            .foregroundColor(Color.white)
+    }
+    .padding(.horizontal, 10)
+    
+    
+    Spacer()
+    
     Button {
         
     } label: {
@@ -85,18 +102,21 @@ func ToolBarBtnGroup(webViewVM: WebViewVM) -> some View {
         }
     }
     .padding(.horizontal, 10)
+    
     Spacer()
+    
     Button {
         
     } label: {
         NavigationLink {
-            TabsView()
+            SavedTabsList()
         } label: {
-            Image(systemName: "clock.arrow.circlepath")
+            Image(systemName: "bookmark")
                 .foregroundColor(Color.white)
         }
     }
     .padding(.horizontal, 10)
+    
     Spacer()
 }
 

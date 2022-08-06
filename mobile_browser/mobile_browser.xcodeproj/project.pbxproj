@@ -19,6 +19,7 @@
 		205880FB289DA590005BD879 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205880FA289DA590005BD879 /* Data.swift */; };
 		205880FD289DA6C2005BD879 /* TabsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205880FC289DA6C2005BD879 /* TabsView.swift */; };
 		20588100289DA8BE005BD879 /* WebSiteRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205880FF289DA8BE005BD879 /* WebSiteRow.swift */; };
+		20588104289E0753005BD879 /* SavedTabsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20588103289E0753005BD879 /* SavedTabsList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		205880FA289DA590005BD879 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		205880FC289DA6C2005BD879 /* TabsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsView.swift; sourceTree = "<group>"; };
 		205880FF289DA8BE005BD879 /* WebSiteRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSiteRow.swift; sourceTree = "<group>"; };
+		20588103289E0753005BD879 /* SavedTabsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedTabsList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				205880F4289CCA4C005BD879 /* SearchBarView.swift */,
 				205880EE289C7557005BD879 /* WebViewVM.swift */,
 				205880FF289DA8BE005BD879 /* WebSiteRow.swift */,
+				20588103289E0753005BD879 /* SavedTabsList.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -178,6 +181,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				205880ED289C7310005BD879 /* WebView.swift in Sources */,
+				20588104289E0753005BD879 /* SavedTabsList.swift in Sources */,
 				205880F7289D0031005BD879 /* WebSite.swift in Sources */,
 				20588100289DA8BE005BD879 /* WebSiteRow.swift in Sources */,
 				205880F2289C92EA005BD879 /* ColorExt.swift in Sources */,
