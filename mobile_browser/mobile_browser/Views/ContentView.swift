@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     init() {
         UIToolbar.appearance().barTintColor = UIColor(Color.defaultPalette.dark)
-       }
+    }
     
     @StateObject var webViewVM = WebViewVM()
     
@@ -21,14 +21,14 @@ struct ContentView: View {
                 Color
                     .defaultPalette.dark
                     .ignoresSafeArea()
-
-                    VStack(spacing: 0) {
-                        SearchBarView()
-                        
-                        WebView(webView: webViewVM.webView, url: webViewVM.url)
-                        
-                        Spacer()
-                    }
+                
+                VStack(spacing: 0) {
+                    SearchBarView()
+                    
+                    WebView(webView: webViewVM.webView, url: $webViewVM.displayingURL)
+                    
+                    Spacer()
+                }
             }
             .toolbar {
                 ToolbarItemGroup(placement: .bottomBar) {

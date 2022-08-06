@@ -18,7 +18,7 @@ struct WebSiteRow: View {
                     .font(.system(size: 25))
                 Text(website.urlString)
             }
-            .padding(.leading, 10)
+            .padding(.leading, 5)
             .padding(.vertical, 5)
             Spacer()
         }

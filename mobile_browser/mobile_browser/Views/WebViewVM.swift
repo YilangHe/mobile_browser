@@ -12,11 +12,18 @@ import SwiftUI
 class WebViewVM: ObservableObject {
     let webView: WKWebView
     // Set defalut url as Google.com
-    let url: URL = URL(string: "https://www.google.com")!
+    let defaultUrl: URL = URL(string: "https://www.google.com")!
     
     @Published var canGoBack: Bool = false
     @Published var canGoForward: Bool = false
     @Published var urlString: String = ""
+    
+    @Published var displayingURL: URL? {
+        didSet {
+            urlString = displayingURL?.absoluteString ?? ""
+            print("New url is: \(String(describing: displayingURL))")
+        }
+    }
     
     @Published var openedTabs: [WebSite] = []
     @Published var savedTabs: [WebSite] = []
@@ -25,7 +32,7 @@ class WebViewVM: ObservableObject {
     init() {
         webView = WKWebView(frame: .zero)
         
-//        webView.load(URLRequest(url: url))
+        webView.load(URLRequest(url: defaultUrl))
         
         setUpBindings()
     }

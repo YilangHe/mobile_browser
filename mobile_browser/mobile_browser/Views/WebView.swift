@@ -11,13 +11,33 @@ import WebKit
 
 struct WebView : UIViewRepresentable {
     let webView : WKWebView
-    var url : URL
+    @Binding var url : URL?
+    
+    func makeCoordinator() -> Coordinator {
+        let coordinator = Coordinator(onUrlChange: { newURL in
+            self.url = newURL
+        })
+        webView.navigationDelegate = coordinator
+        return coordinator
+    }
     
     func makeUIView(context: Context) -> WKWebView {
         webView
     }
     
     func updateUIView(_ uiView: UIViewType, context: Context) {
-        webView.load(URLRequest(url: url))
+        
+    }
+    
+    class Coordinator: NSObject, WKNavigationDelegate {
+        let action: (URL?) -> Void
+        
+        init(onUrlChange action: @escaping (URL?) -> Void) {
+            self.action = action
+        }
+        
+        func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+            action(webView.url)
+        }
     }
 }
