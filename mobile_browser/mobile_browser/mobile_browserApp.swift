@@ -14,12 +14,18 @@ struct mobile_browserApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environmentObject(webViewVM)
-                .environmentObject(savedTabsStore)
-                .onAppear {
-                    SavedTabStore.load { result in
-                        switch result {
+            ContentView(){
+                SavedTabStore.save(tabs: savedTabsStore.savedTabs) { result in
+                    if case .failure(let error) = result {
+                        fatalError(error.localizedDescription)
+                    }
+                }
+            }
+            .environmentObject(webViewVM)
+            .environmentObject(savedTabsStore)
+            .onAppear {
+                SavedTabStore.load { result in
+                    switch result {
                         case .failure(let error):
                             fatalError(error.localizedDescription)
                         case .success(let savedTabs):

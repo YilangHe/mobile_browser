@@ -10,20 +10,33 @@ import SwiftUI
 struct ContentView: View {
     
     @EnvironmentObject var savedTabStore: SavedTabStore
-    @EnvironmentObject var webViewVM: WebViewVM    
+    @EnvironmentObject var webViewVM: WebViewVM
     @Environment(\.scenePhase) private var scenePhase
+    
+    let saveAction: ()->Void
     
     
     var body: some View {
         switch webViewVM.currentScreen {
         case .homeview:
             HomeView()
+                .onChange(of: scenePhase) { phase in
+                    if phase == .inactive { saveAction() }
+                }
         case .saved:
             SavedTabsList()
+                .onChange(of: scenePhase) { phase in
+                    if phase == .inactive { saveAction() }
+                }
         case .tabs:
             SavedTabsList()
+                .onChange(of: scenePhase) { phase in
+                    if phase == .inactive { saveAction() }
+                }
         }
+            
     }
+        
 }
 
 
@@ -147,6 +160,6 @@ struct ToolBarBtnGroup: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(saveAction: {})
     }
 }
