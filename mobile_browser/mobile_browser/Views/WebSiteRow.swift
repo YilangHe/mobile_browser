@@ -37,17 +37,6 @@ struct WebSiteRow: View {
         return components[1]
     }
     
-    func removeSaved() {
-        let size = savedTabStore.savedTabs.count
-        print("saved tab", savedTabStore.savedTabs)
-        for i in 0..<size {
-            print("curr index------->", i)
-            if savedTabStore.savedTabs[i].urlString.lowercased() == webViewVM.urlString.lowercased() {
-                savedTabStore.savedTabs.remove(at: i)
-                break
-            }
-        }
-    }
 }
 
 

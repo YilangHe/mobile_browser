@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SavedTabsList: View {
-    @EnvironmentObject var saveTabStore: SavedTabStore
+    @EnvironmentObject var savedTabStore: SavedTabStore
     @EnvironmentObject var webViewVM: WebViewVM
     
     var body: some View {
@@ -25,8 +25,11 @@ struct SavedTabsList: View {
             }
             NavigationView {
                 VStack {
-                    List(saveTabStore.savedTabs, id: \.id) { tab in
-                        WebSiteRow(website: tab)
+                    List {
+                        ForEach(savedTabStore.savedTabs, id: \.id) { tab in
+                            WebSiteRow(website: tab)
+                        }
+                        .onDelete(perform: delete)
                     }
                 }
                 .navigationBarTitle("Saved")
@@ -36,6 +39,10 @@ struct SavedTabsList: View {
         .navigationBarBackButtonHidden(true)
         }
         
+    }
+    
+    func delete(at offsets: IndexSet) {
+        savedTabStore.savedTabs.remove(atOffsets: offsets)
     }
 }
 
