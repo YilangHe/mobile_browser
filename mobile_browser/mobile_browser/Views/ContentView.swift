@@ -66,7 +66,9 @@ struct HomeView: View {
                     VStack(spacing: 0) {
                         SearchBarView()
                         
+                        
                         WebView(webView: webViewVM.webView, url: $webViewVM.displayingURL)
+                        
                         Spacer()
                     }
                 }

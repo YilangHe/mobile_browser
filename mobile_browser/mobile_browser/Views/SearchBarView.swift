@@ -13,6 +13,18 @@ struct SearchBarView: View {
     
     var body: some View {
         HStack {
+            
+            Button {
+                webViewVM.reload()
+            } label: {
+                Image(systemName: "arrow.clockwise")
+                    .foregroundColor(.white)
+                    .padding(.vertical, 8)
+                    .padding(.leading, 25)
+            }
+            .padding(.trailing, 17)
+            .padding(.vertical, 8)
+            
             HStack {
                 TextField("Search or type URL ",
                           text: $webViewVM.urlString)

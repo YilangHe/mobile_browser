@@ -72,6 +72,10 @@ class WebViewVM: ObservableObject {
         webView.goBack()
     }
     
+    func reload() {
+        webView.reload()
+    }
+    
     
 //
 //    func removeFromSaved() {

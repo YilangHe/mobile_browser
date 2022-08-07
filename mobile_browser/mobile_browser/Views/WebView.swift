@@ -13,6 +13,7 @@ struct WebView : UIViewRepresentable {
     let webView : WKWebView
     @Binding var url : URL?
     
+    
     func makeCoordinator() -> Coordinator {
         let coordinator = Coordinator(onUrlChange: { newURL in
             self.url = newURL
@@ -28,7 +29,7 @@ struct WebView : UIViewRepresentable {
     func updateUIView(_ uiView: UIViewType, context: Context) {
         
     }
-    
+      
     class Coordinator: NSObject, WKNavigationDelegate {
         let action: (URL?) -> Void
         
