@@ -8,22 +8,39 @@
 import SwiftUI
 
 struct SavedTabsList: View {
-    @StateObject var webViewVM: WebViewVM = WebViewVM()
+    @EnvironmentObject var saveTabStore: SavedTabStore
+    @EnvironmentObject var webViewVM: WebViewVM
     
-    var test = [WebSite(urlString: "https://www.google.com")]
     var body: some View {
-        NavigationView {
-            List(test, id: \.id) { tab in
-                WebSiteRow(website: tab)
+        VStack {
+            HStack {
+                Button {
+                    webViewVM.switchToHome()
+                } label: {
+                    Image(systemName: "arrow.left")
+                }
+                .padding()
+                
+                Spacer()
             }
-            .navigationTitle("Saved")
+            NavigationView {
+                VStack {
+                    List(saveTabStore.savedTabs, id: \.id) { tab in
+                        WebSiteRow(website: tab)
+                    }
+                }
+                .navigationBarTitle("Saved")
+                
+            }
+            .navigationViewStyle(.stack)
+        .navigationBarBackButtonHidden(true)
         }
         
     }
 }
 
-struct SavedTabsList_Previews: PreviewProvider {
-    static var previews: some View {
-        SavedTabsList()
-    }
-}
+//struct SavedTabsList_Previews: PreviewProvider {
+//    static var previews: some View {
+//        SavedTabsList(savedTabs: test)
+//    }
+//}

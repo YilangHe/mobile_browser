@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct WebSiteRow: View {
+    @EnvironmentObject var webViewVM: WebViewVM
     var website: WebSite
     
     var body: some View {
@@ -17,10 +18,15 @@ struct WebSiteRow: View {
                     .bold()
                     .font(.system(size: 25))
                 Text(website.urlString)
+                    .lineLimit(2)
             }
             .padding(.leading, 5)
             .padding(.vertical, 5)
             Spacer()
+        }.onTapGesture {
+            webViewVM.switchToHome()
+            webViewVM.urlString = website.urlString
+            webViewVM.loadURL()
         }
     }
     

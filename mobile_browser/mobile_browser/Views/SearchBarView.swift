@@ -10,6 +10,7 @@ import WebKit
 
 struct SearchBarView: View {
     @EnvironmentObject var webViewVM: WebViewVM
+    
     var body: some View {
         HStack {
             HStack {

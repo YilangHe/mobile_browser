@@ -20,6 +20,7 @@
 		205880FD289DA6C2005BD879 /* TabsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205880FC289DA6C2005BD879 /* TabsView.swift */; };
 		20588100289DA8BE005BD879 /* WebSiteRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205880FF289DA8BE005BD879 /* WebSiteRow.swift */; };
 		20588104289E0753005BD879 /* SavedTabsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20588103289E0753005BD879 /* SavedTabsList.swift */; };
+		208A1EE2289F39CF0075B543 /* SavedTabStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208A1EE1289F39CF0075B543 /* SavedTabStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		205880FC289DA6C2005BD879 /* TabsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsView.swift; sourceTree = "<group>"; };
 		205880FF289DA8BE005BD879 /* WebSiteRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSiteRow.swift; sourceTree = "<group>"; };
 		20588103289E0753005BD879 /* SavedTabsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedTabsList.swift; sourceTree = "<group>"; };
+		208A1EE1289F39CF0075B543 /* SavedTabStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedTabStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 				205880FA289DA590005BD879 /* Data.swift */,
 				205880DE289B9E5E005BD879 /* mobile_browserApp.swift */,
 				205880E4289B9E61005BD879 /* Preview Content */,
+				208A1EE1289F39CF0075B543 /* SavedTabStore.swift */,
 			);
 			path = mobile_browser;
 			sourceTree = "<group>";
@@ -181,6 +184,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				205880ED289C7310005BD879 /* WebView.swift in Sources */,
+				208A1EE2289F39CF0075B543 /* SavedTabStore.swift in Sources */,
 				20588104289E0753005BD879 /* SavedTabsList.swift in Sources */,
 				205880F7289D0031005BD879 /* WebSite.swift in Sources */,
 				20588100289DA8BE005BD879 /* WebSiteRow.swift in Sources */,

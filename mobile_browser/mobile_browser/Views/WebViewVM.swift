@@ -26,11 +26,19 @@ class WebViewVM: ObservableObject {
     }
     
     @Published var openedTabs: [WebSite] = []
-    @Published var savedTabs: [WebSite] = []
     
+    enum Screen {
+        case homeview
+        case saved
+        case tabs
+    }
+    
+    @Published private(set) var currentScreen: Screen
     
     init() {
         webView = WKWebView(frame: .zero)
+        
+        currentScreen = .homeview
         
         webView.load(URLRequest(url: defaultUrl))
         
@@ -63,25 +71,43 @@ class WebViewVM: ObservableObject {
         webView.goBack()
     }
     
-    func isSaved() -> Bool {
-        for website in savedTabs {
-            if urlString.lowercased() == website.urlString.lowercased() {
-                return true
-            }
-        }
-        return false
-    }
-    
-    func removeFromSaved() {
-        if let index = savedTabs.firstIndex(of: WebSite(urlString: urlString)) {
-            savedTabs.remove(at: index)
-        }
-    }
+//    func isSaved() -> Bool {
+//        for website in savedTabs {
+//            if urlString.lowercased() == website.urlString.lowercased() {
+//                return true
+//            }
+//        }
+//        return false
+//    }
+//
+//    func removeFromSaved() {
+//        if let index = savedTabs.firstIndex(of: WebSite(urlString: urlString)) {
+//            savedTabs.remove(at: index)
+//        }
+//    }
     
     func verifyUrl () -> Bool {
         if let url = NSURL(string: urlString) {
             return UIApplication.shared.canOpenURL(url as URL)
         }
         return false
+    }
+    
+    func switchToHome() -> Void {
+        if currentScreen == .homeview {
+            return
+        }
+        else {
+            currentScreen = .homeview
+        }
+    }
+    
+    func switchToSaved() -> Void {
+        if currentScreen == .saved {
+            return
+        }
+        else {
+            currentScreen = .saved
+        }
     }
 }
