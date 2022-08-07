@@ -26,6 +26,7 @@ class WebViewVM: ObservableObject {
     }
     
     @Published var openedTabs: [WebSite] = []
+    @EnvironmentObject var savedTabStore: SavedTabStore
     
     enum Screen {
         case homeview
@@ -71,14 +72,7 @@ class WebViewVM: ObservableObject {
         webView.goBack()
     }
     
-//    func isSaved() -> Bool {
-//        for website in savedTabs {
-//            if urlString.lowercased() == website.urlString.lowercased() {
-//                return true
-//            }
-//        }
-//        return false
-//    }
+    
 //
 //    func removeFromSaved() {
 //        if let index = savedTabs.firstIndex(of: WebSite(urlString: urlString)) {

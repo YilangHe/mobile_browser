@@ -34,9 +34,10 @@ struct ContentView: View {
                     if phase == .inactive { saveAction() }
                 }
         }
-            
-    }
         
+    }
+    
+    
 }
 
 
@@ -87,6 +88,7 @@ struct HomeView: View {
 struct ToolBarBtnGroup: View {
     @EnvironmentObject var webViewVM: WebViewVM
     @EnvironmentObject var savedTabStore: SavedTabStore
+    @State var isCurrWebSaved: Bool = false
     
     var body: some View {
         Spacer()
@@ -113,10 +115,17 @@ struct ToolBarBtnGroup: View {
         Spacer()
         
         Button {
-            let newWebsite = WebSite(urlString: webViewVM.urlString)
-            savedTabStore.savedTabs.append(newWebsite)
+            if !isSaved() {
+                let newWebsite = WebSite(urlString: webViewVM.urlString)
+                savedTabStore.savedTabs.append(newWebsite)
+                isCurrWebSaved = true
+            } else {
+                removeSaved()
+                isCurrWebSaved = false
+            }
+            
         } label: {
-            Image(systemName: "star")
+            Image(systemName: isSaved() ? "star.fill" : "star")
                 .foregroundColor(Color.white)
         }
         .padding(.horizontal, 10)
@@ -151,6 +160,27 @@ struct ToolBarBtnGroup: View {
         .padding(.horizontal, 10)
         
         Spacer()
+    }
+    
+    func isSaved() -> Bool {
+        for website in savedTabStore.savedTabs {
+            if webViewVM.urlString.lowercased() == website.urlString.lowercased() {
+                return true
+            }
+        }
+        return false
+    }
+    
+    func removeSaved() {
+        let size = savedTabStore.savedTabs.count
+        print("saved tab", savedTabStore.savedTabs)
+        for i in 0..<size {
+            print("curr index------->", i)
+            if savedTabStore.savedTabs[i].urlString.lowercased() == webViewVM.urlString.lowercased() {
+                savedTabStore.savedTabs.remove(at: i)
+                break
+            }
+        }
     }
 }
 
