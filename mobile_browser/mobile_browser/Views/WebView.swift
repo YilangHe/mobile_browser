@@ -9,7 +9,8 @@ import Foundation
 import SwiftUI
 import WebKit
 
-struct WebView : UIViewRepresentable {
+struct WebView : UIViewRepresentable, Identifiable {
+    let id = UUID()
     let webView : WKWebView
     @Binding var url : URL?
     

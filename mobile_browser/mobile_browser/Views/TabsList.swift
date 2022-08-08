@@ -1,5 +1,5 @@
 //
-//  SavedTabsList.swift
+//  TabsView.swift
 //  mobile_browser
 //
 //  Created by Charles on 8/5/22.
@@ -7,8 +7,10 @@
 
 import SwiftUI
 
-struct SavedTabsList: View {
-    @EnvironmentObject var savedTabStore: SavedTabStore
+import SwiftUI
+
+struct TabsList: View {
+    @EnvironmentObject var tabsStore: TabsStore
     @EnvironmentObject var webViewVM: WebViewVM
     
     var body: some View {
@@ -26,13 +28,13 @@ struct SavedTabsList: View {
             NavigationView {
                 VStack {
                     List {
-                        ForEach(savedTabStore.savedTabs, id: \.id) { tab in
+                        ForEach(TabsStore.tabs, id: \.id) { tab in
                             WebSiteRow(website: tab)
                         }
                         .onDelete(perform: delete)
                     }
                 }
-                .navigationBarTitle("Saved")
+                .navigationBarTitle("Tabs")
                 
             }
             .navigationViewStyle(.stack)
@@ -42,12 +44,13 @@ struct SavedTabsList: View {
     }
     
     func delete(at offsets: IndexSet) {
-        savedTabStore.savedTabs.remove(atOffsets: offsets)
+        TabsStore.tabs.remove(atOffsets: offsets)
+        webViewVM.urlString = ""
     }
 }
 
-//struct SavedTabsList_Previews: PreviewProvider {
+//struct TabsView_Previews: PreviewProvider {
 //    static var previews: some View {
-//        SavedTabsList(savedTabs: test)
+//        TabsList()
 //    }
 //}

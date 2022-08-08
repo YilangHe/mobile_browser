@@ -10,6 +10,7 @@ import WebKit
 
 struct SearchBarView: View {
     @EnvironmentObject var webViewVM: WebViewVM
+    @EnvironmentObject var tabsStore: TabsStore
     
     var body: some View {
         HStack {
@@ -40,6 +41,10 @@ struct SearchBarView: View {
             .padding(.vertical, 10)
             
             Button {
+                let newWeb = WebSite(urlString: webViewVM.urlString)
+                
+                TabsStore.tabs.append(newWeb)
+                
                 webViewVM.loadURL()
             } label: {
                 Text("GO")

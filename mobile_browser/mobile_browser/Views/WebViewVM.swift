@@ -21,12 +21,12 @@ class WebViewVM: ObservableObject {
     @Published var displayingURL: URL? {
         didSet {
             urlString = displayingURL?.absoluteString ?? ""
-            print("New url is: \(String(describing: displayingURL))")
+            if verifyUrl() {
+                let newWeb = WebSite(urlString: self.urlString)
+                TabsStore.tabs.append(newWeb)
+            }
         }
     }
-    
-    @Published var openedTabs: [WebSite] = []
-    @EnvironmentObject var savedTabStore: SavedTabStore
     
     enum Screen {
         case homeview
@@ -41,7 +41,9 @@ class WebViewVM: ObservableObject {
         
         currentScreen = .homeview
         
-        webView.load(URLRequest(url: defaultUrl))
+        let loadURL = TabsStore.tabs.isEmpty ? defaultUrl : URL(string: TabsStore.tabs[TabsStore.tabs.count - 1].urlString)
+        
+        webView.load(URLRequest(url: loadURL!))
         
         setUpBindings()
     }
@@ -106,6 +108,15 @@ class WebViewVM: ObservableObject {
         }
         else {
             currentScreen = .saved
+        }
+    }
+    
+    func switchToTabs() -> Void {
+        if currentScreen == .tabs {
+            return
+        }
+        else {
+            currentScreen = .tabs
         }
     }
 }

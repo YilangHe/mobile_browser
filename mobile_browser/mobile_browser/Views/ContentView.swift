@@ -29,7 +29,7 @@ struct ContentView: View {
                     if phase == .inactive { saveAction() }
                 }
         case .tabs:
-            SavedTabsList()
+            TabsList()
                 .onChange(of: scenePhase) { phase in
                     if phase == .inactive { saveAction() }
                 }
@@ -138,8 +138,8 @@ struct ToolBarBtnGroup: View {
         Button {
             
         } label: {
-            NavigationLink {
-                TabsView()
+            Button {
+                webViewVM.switchToTabs()
             } label: {
                 Image(systemName: "square.3.stack.3d")
                     .foregroundColor(Color.white)
@@ -175,9 +175,7 @@ struct ToolBarBtnGroup: View {
     
     func removeSaved() {
         let size = savedTabStore.savedTabs.count
-        print("saved tab", savedTabStore.savedTabs)
         for i in 0..<size {
-            print("curr index------->", i)
             if savedTabStore.savedTabs[i].urlString.lowercased() == webViewVM.urlString.lowercased() {
                 savedTabStore.savedTabs.remove(at: i)
                 break
