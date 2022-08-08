@@ -37,6 +37,15 @@ struct SearchBarView: View {
             }
             .background(Color.defaultPalette.searchBar)
             .cornerRadius(30)
+            .overlay(alignment: .trailing) {
+                Button {
+                    webViewVM.urlString = ""
+                } label: {
+                    Image(systemName: "x.circle.fill")
+                        .foregroundColor(.gray)
+                }
+                .padding(.trailing, 3)
+            }
             .padding(.horizontal, 10)
             .padding(.vertical, 10)
             
