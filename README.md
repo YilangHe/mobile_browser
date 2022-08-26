@@ -1,9 +1,10 @@
 # mobile_browser
 
 ### UI Layouts
-<img width="300" alt="Screen Shot 2022-08-08 at 20 21 13" src="https://user-images.githubusercontent.com/64986230/186259868-d22209b7-bd7a-4c39-8664-7ee41cf21d8e.png">
-<img width="300" alt="Screen Shot 2022-08-08 at 20 29 25" src="https://user-images.githubusercontent.com/64986230/186260045-99afbe1b-ff27-46ba-8801-70f825a5fea6.png">
-<img width="300" alt="Screen Shot 2022-08-08 at 20 33 39" src="https://user-images.githubusercontent.com/64986230/186260060-0a337dbf-d495-4951-aed7-d74d81825bf8.png">
+
+Home Page             |  Tabs Page         | Saved Pages
+:-------------------------:|:-------------------------:|:-------------------------:
+  <img width="300" alt="Screen Shot 2022-08-08 at 20 21 13" src="https://user-images.githubusercontent.com/64986230/186259868-d22209b7-bd7a-4c39-8664-7ee41cf21d8e.png">| <img width="300" alt="Screen Shot 2022-08-08 at 20 29 25" src="https://user-images.githubusercontent.com/64986230/186260045-99afbe1b-ff27-46ba-8801-70f825a5fea6.png">  | <img width="300" alt="Screen Shot 2022-08-08 at 20 33 39" src="https://user-images.githubusercontent.com/64986230/186260060-0a337dbf-d495-4951-aed7-d74d81825bf8.png">
 
 ### Functionalities Demo
 
